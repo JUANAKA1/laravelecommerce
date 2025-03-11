@@ -119,6 +119,9 @@ class AdminController extends Controller
         $img->resize(124,124, function($constraint){
             $constraint->aspectRatio();
         })->save($destinationPath.'/'.$imageName);
-
+    }
+    public function category_edit($id) {
+        $category = Category::find($id);
+        return view('admin.category-edit', compact('category'));
     }
 }
